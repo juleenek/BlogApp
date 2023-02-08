@@ -6,6 +6,8 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   padding: 20px 100px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   ${css`
     background-color: ${stackColor.darkBlue};
   `}

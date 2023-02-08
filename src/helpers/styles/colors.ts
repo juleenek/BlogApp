@@ -1,5 +1,6 @@
 export const stackColor = {
   white: '#FFF',
   black: '#000',
-  darkBlue: '#1e5f98;'
+  darkBlue: '#308385;',
+  gray: '#949494;'
 };
