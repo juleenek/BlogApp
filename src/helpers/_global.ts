@@ -1,6 +1,6 @@
 import reset from 'styled-reset';
 import { createGlobalStyle } from 'styled-components';
-import { stackColor } from './colors';
+import { stackColor } from './_variables';
 
 export const GlobalStyle = createGlobalStyle`
 ${reset}
@@ -12,7 +12,6 @@ html{
 }
   body {
    background: #ffffff;
-   overflow: hidden;
    height: 100vh;
    font-family: 'Roboto', sans-serif;
   }

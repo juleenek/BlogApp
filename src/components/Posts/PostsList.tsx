@@ -1,13 +1,13 @@
 import { FC, useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { stackColor } from '../../helpers/styles/colors';
+import { stackColor } from '../../helpers/_variables';
 import { collection, DocumentData, getDocs } from 'firebase/firestore';
 import { firestore } from '../../utils/firebase.config';
 import { PostItem } from './PostItem';
-import {TopPostItem} from './TopPostItem'
+import { TopPostItem } from './TopPostItem';
 
 const Wrapper = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -31,7 +31,8 @@ export const PostsList: FC = () => {
   return (
     <Wrapper>
       {blogItems.map((blogItem: DocumentData, index: number) => {
-        if (index === 0) return <TopPostItem key={blogItem.id} post={blogItem} />;
+        if (index === 0)
+          return <TopPostItem key={blogItem.id} post={blogItem} />;
         return <PostItem key={blogItem.id} post={blogItem} />;
       })}
     </Wrapper>

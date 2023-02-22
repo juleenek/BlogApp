@@ -1,14 +1,18 @@
 import { FC } from 'react';
-import { stackColor } from '../../helpers/styles/colors';
+import { breakpointWidth, stackColor } from '../../helpers/_variables';
 import styled, { css } from 'styled-components';
 import { DocumentData } from 'firebase/firestore';
 
 const Wrapper = styled.div`
-  width: 45%;
+  width: 44%;
   padding: 20px;
   box-shadow: rgba(60, 64, 67, 0.2) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.01) 0px 0px 6px 2px;
   margin-bottom: 30px;
+
+  @media (max-width: ${breakpointWidth.mobile}) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.h3`
@@ -29,6 +33,7 @@ const Content = styled.h4`
 `;
 
 const Continue = styled.p`
+  padding: 20px 0 5px 0;
   color: #000000;
 `;
 
@@ -40,8 +45,8 @@ export const PostItem: FC<DocumentData> = ({ post }: DocumentData) => {
     <Wrapper>
       <Title>{post.title}</Title>
       <PostDate>{date.toDateString()}</PostDate>
-      <Content>{post.content}</Content>
-      <Continue>Continue reading...</Continue>
+      <Content>{post.content.slice(0, 110)}...</Content>
+      <Continue>Continue reading</Continue>
     </Wrapper>
   );
 };

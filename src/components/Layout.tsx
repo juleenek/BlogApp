@@ -1,23 +1,20 @@
 import styled from 'styled-components';
 import { Header } from './Header';
-import { PostsList } from './Posts/PostsList';
+import { MainContainer } from './MainPage/MainContainer';
 
 const Wrapper = styled.div`
-  width: 100%;
-`;
-const PostWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  padding: 40px 0;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  line-height: 23px;
 `;
 
 export const Layout = () => {
   return (
     <Wrapper>
       <Header />
-      <PostWrapper>
-        <PostsList />
-      </PostWrapper>
+      <MainContainer />
     </Wrapper>
   );
 };
